@@ -14,8 +14,8 @@ import pygame
 class AlienInvasion:
     """Overall class to manage game assets and behaviour"""
     def __init__(self):
-        """Inialtise the game, and create game resources"""
-        pygame.init() # it gives the background setting for the game to work properly
+        """Initialise the game, and create game resources"""
+        pygame.init() # It gives the background setting for the game to work properly
         self.clock=pygame.time.Clock()
         self.settings=Settings()
         # self.screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
@@ -130,7 +130,7 @@ class AlienInvasion:
             self.ship.moving_right=True
         elif event.key==pygame.K_LEFT:
             self.ship.moving_left=True
-        elif event.key == pygame.K_q: # Exit usng q
+        elif event.key == pygame.K_q: # Exit using q
             sys.exit()
         elif event.key == pygame.K_SPACE:
             self._fire_bullet()
@@ -142,7 +142,7 @@ class AlienInvasion:
             self.ship.moving_right= False
          elif event.key==pygame.K_LEFT:
             self.ship.moving_left=False
-         #move the ship to the right
+         # move the ship to the right
           # self.ship.rect.x+=1
 
     def _fire_bullet(self):
@@ -215,7 +215,7 @@ class AlienInvasion:
         # Check for alien-ship collisions
         if pygame.sprite.spritecollideany(self.ship,self.aliens):
             self._ship_hit()
-        # Looke for aliens hitting bottom of the screen
+        # Look for aliens hitting bottom of the screen
         self._check_aliens_bottom()
 
     def _ship_hit(self):
@@ -238,7 +238,7 @@ class AlienInvasion:
 
 
     def _check_aliens_bottom(self):
-        """Check if any alien have reahed the bottom"""
+        """Check if any alien have reached the bottom"""
         for alien in self.aliens.sprites():
             if alien.rect.bottom >= self.settings.screen_height:
                 # Treat this the same as if the ship got hit 
